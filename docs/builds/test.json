@@ -1,0 +1,1 @@
+{"blocks":[{"t":"Header","c":[1,["header",[],[]],[{"t":"Str","c":"Header"}]]},{"t":"Para","c":[{"t":"Str","c":"Simple"},{"t":"Space"},{"t":"Str","c":"text"}]},{"t":"Para","c":[{"t":"Str","c":"[](./img.png)"}]},{"t":"Para","c":[{"t":"Image","c":[["",[],[]],[],["./img.png",""]]}]}],"pandoc-api-version":[1,20],"meta":{}}
