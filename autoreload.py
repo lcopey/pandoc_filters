@@ -27,17 +27,21 @@ class Handler(FileSystemEventHandler):
         if delta > timedelta(seconds=1) and self.in_patterns(event.src_path):
             self.last_modified = datetime.now()
             _in = "./docs/source/base.md"
-            _f = 'markdown'
-            _filter = './src/main.py'
+            _f = "markdown"
+            _filter = "./src/filter.py"
             _out = "./docs/builds/test"
-            _r = '../docs/source/'
+            _r = "../docs/source/"
 
-            pandoc_exec(_in, _f, 'json', _filter, _out, _r)
-            pandoc_exec(_in, _f, 'html', _filter, _out, _r)
+            pandoc_exec(_in, _f, "json", _filter, _out, _r)
+            pandoc_exec(_in, _f, "html", _filter, _out, _r)
 
 
-def pandoc_exec(_in: str, _f: str, _t: str, _filter: str, _out: str, _resource: str = None):
-    os.system(f"pandoc {_in} -f {_f} -t {_t} --filter={_filter} --resource-path={_resource} -s -o {_out}.{_t}")
+def pandoc_exec(
+    _in: str, _f: str, _t: str, _filter: str, _out: str, _resource: str = None
+):
+    os.system(
+        f"pandoc {_in} -f {_f} -t {_t} --filter={_filter} --resource-path={_resource} -s -o {_out}.{_t}"
+    )
 
 
 class Watcher:
